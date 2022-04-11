@@ -266,6 +266,14 @@ const AppProvider = ({ children }) => {
       logoutUser();
     }
   };
+  const deleteProduct = async (productID) => {
+    dispatch({ type: DELETE_JOB_BEGIN });
+    try {
+      await authFetch.delete(`/products/${productID}`);
+    } catch (error) {
+      logoutUser();
+    }
+  };
   const showStats = async () => {
     dispatch({ type: SHOW_STATS_BEGIN });
     try {
@@ -303,6 +311,7 @@ const AppProvider = ({ children }) => {
         getJobs,
         setEditJob,
         deleteSale,
+        deleteProduct,
         editJob,
         showStats,
         clearFilters,

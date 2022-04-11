@@ -43,5 +43,18 @@ const Wrapper = styled.section`
     height: 4rem;
     border: 1px solid black;
   }
+  .icon {
+    font-size: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    svg {
+      color: var(--grey-400);
+    }
+  }
+  .back-button {
+    padding: 20px;
+    margin: 40px;
+  }
 `;
 export default Wrapper;

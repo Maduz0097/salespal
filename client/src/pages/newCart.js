@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Logo, FormRow, Alert, Navbar } from "../components";
 import Wrapper from "../assets/wrappers/RegisterPage";
 import axios from "axios";
-
+import { IoArrowBackCircleSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 export default class Cart extends Component {
   constructor(props) {
     super(props);
@@ -167,7 +168,10 @@ export default class Cart extends Component {
       .post("/api/v1/sales", Sale)
       .then((response) => {
         console.log(response.status);
-
+        if (response.status == 201) {
+          alert("Order Added Successfully!");
+          window.location.reload();
+        }
         this.setState({
           axiosError: response.data,
         });
@@ -179,6 +183,9 @@ export default class Cart extends Component {
   render() {
     return (
       <Wrapper className="full-page">
+        <Link className="back-button" to={"/"}>
+          <span className="icon">{IoArrowBackCircleSharp} BACK</span>
+        </Link>
         <div class="grid-container">
           <div class="grid-item">
             <form className="form" onSubmit={this.handleSubmit}>

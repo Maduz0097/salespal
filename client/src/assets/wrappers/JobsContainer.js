@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   margin-top: 4rem;
@@ -7,6 +7,10 @@ const Wrapper = styled.section`
   }
   & > h5 {
     font-weight: 700;
+  }
+  .table_head {
+    width: 100%;
+    text-align: center;
   }
   .jobs {
     display: grid;
@@ -20,5 +24,5 @@ const Wrapper = styled.section`
       gap: 1rem;
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;

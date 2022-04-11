@@ -2,12 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Register, Landing, Error, ProtectedRoute } from "./pages";
 import {
   AllJobs,
+  AllProducts,
   Profile,
   SharedLayout,
   Stats,
   AddJob,
   AddProduct,
 } from "./pages/dashboard";
+
 import Cart from "./pages/newCart";
 // import AddProduct from "./pages/AddProduct";
 function App() {
@@ -24,6 +26,7 @@ function App() {
         >
           <Route index element={<Stats />} />
           <Route path="all-jobs" element={<AllJobs />} />
+          <Route path="all-products" element={<AllProducts />} />
           <Route path="add-job" element={<AddJob />} />
           <Route path="profile" element={<Profile />} />
         </Route>
