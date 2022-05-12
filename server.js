@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import "express-async-errors";
 import morgan from "morgan";
-
+import cors from "cors";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -41,7 +41,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(xss());
 app.use(mongoSanitize());
-
+app.use(cors());
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", authenticateUser, jobsRouter);
 app.use("/api/v1/products", productRouter);
